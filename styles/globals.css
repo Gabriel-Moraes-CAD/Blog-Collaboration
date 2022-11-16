@@ -1,9 +1,9 @@
 html,
 body {
+  background-color: #282A36;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:'Merriweather', serif;
 }
 
 a {
@@ -15,12 +15,165 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* ###############################
+########## Latest.tsx CSS ########
+############################## */
+.navbar{
+  display: flex;
+  padding: 0px;
+  color: white;
+  background-color: #282A36 ;
+  
+}
+
+.navbar-btn {
+  margin-left: auto;
+  display: flex;
+  padding: 0px 20px;
+  
+}
+.img-navbar{
+  width: 50px;
+  height: 50px;
+  margin-top: 14px;
+  margin-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  
+}
+li{
+  padding: 14px 10px;
+}
+
+.home-top{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding-top: 100px;
+  color: #ffff;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ffff;
+}
+
+.home-top-post{
+  grid-column: span 6;
+  background-color: #44475A;
+  border-radius: 15px;
+  height: auto;
+  width: 100%;
+  box-shadow: 10px 10px 10px #1a1b22;
+}
+
+.img-top{
+  height: auto;
+  width: 98%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px #282A36;
+}
+
+.post-text{
+  margin-left: 10px;
+  line-height: 20px;
+}
+.category-text{
+  margin-bottom: -10px;
+  color:#FF63BD ;
+  font-weight: 300;
+}
+.post-title{
+  font-weight: 700;
+  font-style: italic;
+}
+.short-desc{
+  margin-top: -10px;
+  font-weight: 400;
+}
+
+.latest-post-component {
+  background-color: #44475A;
+  grid-column: span 6;
+  border-radius: 15px;
+  height: auto;
+  max-width: 36rem;
+
+}
+
+/* ###############################
+########## Trending.jsx ########
+############################## */
+.component-title{
+  color: #ffff;
+  margin: 0px auto; 
+  padding: 50px;
+  padding-left: 120px; 
+  font-weight: 900;
+  font-style: normal;
+  font-size: xx-large;
+}
+.trending-top {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding-top: 10px;
+  color: #ffff;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ffff;
+  justify-items: center;
+  
+}
+
+.trending-top-post {
+  grid-column: span 6;
+  background-color: #44475A;
+  box-shadow: 10px 10px 10px #1a1b22;
+  border-radius: 15px;
+  height: auto;
+  width: 95%;
+}
+
+.img-trending {
+  height: auto;
+  width: 98%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px #282A36;
+}
+
+/* ###############################
+########## LifeStyle.jsx ########
+############################## */
+
+.lifestyle-top {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding-top: 10px;
+  color: #ffff;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ffff;
+  justify-items: center;
+
+}
+
+.lifestyle-top-post {
+  grid-column: span 4;
+  background-color: #44475A;
+  box-shadow: 10px 10px 10px #1a1b22;
+  border-radius: 15px;
+  height: auto;
+  width: 95%;
+}
+
+.img-lifestyle {
+  height: auto;
+  width: 98%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px #282A36;
 }
