@@ -1,7 +1,44 @@
 import Head from "next/head";
 import { Latest, Trending, PostWidget, LifeStyle } from "../components";
+import { GraphQLClient, gql } from "graphql-request";
+import BlogTest from "../components/BlogTest";
 
-const posts = [
+const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
+
+const QUERY = gql`
+  {
+    posts {
+      title
+      datePublished
+      coverPhoto {
+        id
+        url
+      }
+      category
+      author {
+        id
+        name
+        avatar {
+          url
+        }
+      }
+      content {
+        html
+      }
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const { posts } = await graphcms.request(QUERY);
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
+const postss = [
   {
     title: "Best Trails",
     category: "LifeStyle",
@@ -74,7 +111,7 @@ const postsLifeStyle = [
   },
 ];
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div className="">
       <Head>
@@ -83,7 +120,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        {posts.map((post, index) => (
+        {postss.map((post, index) => (
           <Latest post={post} key={post.title} />
         ))}
       </div>
@@ -103,6 +140,20 @@ export default function Home() {
             <LifeStyle post={post} key={post.title} />
           ))}
         </div>
+      </div>
+      <div>
+        {posts?.slice(0, 3).map((content) => (
+          <BlogTest
+            title={content.title}
+            datePublished={content.datePublished}
+            author={content.author}
+            coverPhoto={content.coverPhoto}
+            key={content.id}
+            avatar={content.author}
+            content={content.content}
+            category={content.category}
+          />
+        ))}
       </div>
     </div>
   );
