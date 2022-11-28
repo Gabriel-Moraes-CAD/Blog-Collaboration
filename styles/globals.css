@@ -178,6 +178,17 @@ li{
   box-shadow: 1px 1px 10px #282A36;
 }
 
+.trails{
+  color: red;
+}
+
+.blue{
+  color: blue;
+}
+
+.green{
+  color: greenyellow;
+
 /* ###############################
 ########## PostWidget.jsx ########
 ############################## */
@@ -221,4 +232,5 @@ li{
 
 .texts2 {
   flex: 5;
+
 }
