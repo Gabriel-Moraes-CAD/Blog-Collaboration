@@ -178,17 +178,6 @@ li{
   box-shadow: 1px 1px 10px #282A36;
 }
 
-.trails{
-  color: red;
-}
-
-.blue{
-  color: blue;
-}
-
-.green{
-  color: greenyellow;
-
 /* ###############################
 ########## PostWidget.jsx ########
 ############################## */
@@ -221,6 +210,7 @@ li{
   overflow: hidden;
   width: 65px;
   height: 65px;
+  object-fit: ;
   border-radius: 50%;
   margin: 3px;
 }
@@ -228,6 +218,7 @@ li{
 .img-widget {
   height: 100%;
   width: auto;
+  
 }
 
 .texts2 {
