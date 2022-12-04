@@ -230,14 +230,26 @@ li{
   box-shadow: 1px 1px 10px #282A36;
   }
   
-.trails{
-  color: red;
+    /* ###############################
+  ########## CATEGORIES CSS ########
+  ############################## */
+
+.Trails{
+  color: #5EE3FF;
 }
 
-.blue{
-  color: blue;
+.Outdoors{
+  color: #AE75FF;
 }
 
-.green{
-  color: greenyellow;
+.Recipes{
+  color: #54E879;
+}
+
+.LifeStyle {
+  color: #FFAB52;
+}
+
+.Winter {
+  color: #FF63BD;
 }

@@ -9,6 +9,8 @@ const QUERY = gql`
   {
     posts {
       title
+      id
+      slug
       datePublished
       coverPhoto {
         id
@@ -39,120 +41,6 @@ export async function getStaticProps() {
   };
 }
 
-const postss = [
-  {
-    title: "Best Trails",
-    category: "LifeStyle",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  // {
-  //   title: "Salmon Run",
-  //   category: "Trails",
-
-  //   excerpt:
-  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-  //   html: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  // },
-  // {
-  //   title: "Kayak in TO",
-  //   excerpt:
-  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-  //   html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  // },
-];
-
-const postsWidget = [
-  {
-    title: "Best Trails",
-    category: "LifeStyle",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    title: "Salmon Run",
-    category: "Trails",
-
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    title: "Kayak in TO",
-    category: "Outdoors",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    title: "Smoothie Bowl",
-    category: "Recipes",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-
-  // {
-  //   title: "Kayak in TO",
-  //   category: "Outdoors",
-  //   excerpt:
-  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-  //   html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  // },
-
-];
-
-const postsTrend = [
-  {
-    title: "Best Trails",
-    category: "LifeStyle",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    title: "Salmon Run",
-    category: "Trails",
-
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  // {
-  //   title: "Kayak in TO",
-  //   excerpt:
-  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-  //   html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  // },
-];
-
-const postsLifeStyle = [
-  {
-    title: "Best Trails",
-    category: "LifeStyle",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    title: "Salmon Run",
-    category: "Trails",
-
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-  {
-    title: "Kayak in TO",
-    category: "Outdoors",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
-    html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  },
-];
-
 export default function Home({ posts }) {
   return (
     <div className="">
@@ -164,22 +52,55 @@ export default function Home({ posts }) {
 
       <div className="home-top">
         <div className="home-top-post">
-          {postss.map((post, index) => (
-            <Latest post={post} key={post.title} />
+          {posts?.slice(0, 1).map((content) => (
+            <Latest
+              title={content.title}
+              datePublished={content.datePublished}
+              author={content.author}
+              coverPhoto={content.coverPhoto}
+              key={content.id}
+              avatar={content.author}
+              content={content.content}
+              category={content.category}
+              text={content.text}
+              slug={content.slug}
+            />
           ))}
         </div>
 
         <div className="home-top-widget1">
-          {postsWidget.map((post, index) => (
-            <PostWidget post={post} key={post.title} />
+          {posts?.slice(1, 5).map((content) => (
+            <PostWidget
+              title={content.title}
+              datePublished={content.datePublished}
+              author={content.author}
+              coverPhoto={content.coverPhoto}
+              key={content.id}
+              avatar={content.author}
+              content={content.content}
+              category={content.category}
+              text={content.text}
+              slug={content.slug}
+            />
           ))}
         </div>
       </div>
       <div>
         <h2 className="component-title">Trending</h2>
         <div className="trending-top">
-          {postsTrend.map((post, index) => (
-            <Trending post={post} key={post.title} />
+          {posts?.slice(2, 4).map((content) => (
+            <Trending
+              title={content.title}
+              datePublished={content.datePublished}
+              author={content.author}
+              coverPhoto={content.coverPhoto}
+              key={content.id}
+              avatar={content.author}
+              content={content.content}
+              category={content.category}
+              text={content.text}
+              slug={content.slug}
+            />
           ))}
         </div>
       </div>
@@ -198,11 +119,12 @@ export default function Home({ posts }) {
               content={content.content}
               category={content.category}
               text={content.text}
+              slug={content.slug}
             />
           ))}
         </div>
       </div>
-      <div>
+      {/* <div>
         {posts?.slice(0, 3).map((content) => (
           <BlogTest
             title={content.title}
@@ -215,7 +137,7 @@ export default function Home({ posts }) {
             category={content.category}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

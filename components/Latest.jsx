@@ -1,22 +1,38 @@
+import Link from "next/link";
 import React from "react";
 import PostWidget from "./PostWidget";
 
-const Latest = ({ post,  }) => {
+const Latest = ({
+  title,
+  datePublished,
+  author,
+  coverPhoto,
+  content,
+  category,
+  text,
+  slug,
+}) => {
   return (
-   
-      <div className="">
+    <div className="">
+      <Link href={"/posts/" + slug}>
         <div>
-          <img className="img-top" src={post.html} />
+          <img className="img-top" src={coverPhoto?.url} />
         </div>
         <div className="post-text">
-          {/* Use tailwind here for conditional css */}
-          <p className="category-text">{post.category}</p>
-          <h2 className="post-title">{post.title}</h2>
-          <p className="short-desc">{post.excerpt}</p>
+          <p
+            className={`${category === "Trails" ? "Trails" : ""} 
+        ${category === "Outdoors" ? "Outdoors" : ""}
+        ${category === "Recipes" ? "Recipes" : ""}
+        ${category === "LifeStyle" ? "LifeStyle" : ""}
+        ${category === "Winter" ? "Winter" : ""}`}
+          >
+            {category}
+          </p>
+          <h2 className="post-title">{title}</h2>
+          <p className="short-desc">{content?.text.substring(0, 75)}</p>
         </div>
-      </div>
-
-    
+      </Link>
+    </div>
   );
 };
 
