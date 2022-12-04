@@ -52,7 +52,7 @@ li{
   grid-template-columns: repeat(12, 1fr);
   gap: 20px;
   max-width: 1200px;
-  margin: 0px 10px;
+  margin: 0px auto;
   padding-top: 100px;
   color: #ffff;
   padding-bottom: 40px;

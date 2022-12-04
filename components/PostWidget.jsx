@@ -1,7 +1,7 @@
 import React from "react";
-import Link from 'next/link';
+import Link from "next/link";
 
-const PostWidget = ({post}) => {
+const PostWidget = ({ post }) => {
   return (
     <div className="home-top-widget2">
       <div className="post-text-container">
