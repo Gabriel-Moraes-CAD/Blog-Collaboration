@@ -52,7 +52,7 @@ li{
   grid-template-columns: repeat(12, 1fr);
   gap: 20px;
   max-width: 1200px;
-  margin: 0px auto;
+  margin: 0px 10px;
   padding-top: 100px;
   color: #ffff;
   padding-bottom: 40px;
@@ -228,4 +228,16 @@ li{
   width: 98%;
   border-radius: 15px;
   box-shadow: 1px 1px 10px #282A36;
+  }
+  
+.trails{
+  color: red;
+}
+
+.blue{
+  color: blue;
+}
+
+.green{
+  color: greenyellow;
 }
