@@ -93,6 +93,7 @@ const postsWidget = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
     html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
+
   // {
   //   title: "Kayak in TO",
   //   category: "Outdoors",
@@ -100,6 +101,7 @@ const postsWidget = [
   //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolores incidunt veritatis!",
   //   html: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   // },
+
 ];
 
 const postsTrend = [
@@ -166,7 +168,8 @@ export default function Home({ posts }) {
             <Latest post={post} key={post.title} />
           ))}
         </div>
-        <div className="top-latest-post-widget1">
+
+        <div className="home-top-widget1">
           {postsWidget.map((post, index) => (
             <PostWidget post={post} key={post.title} />
           ))}
