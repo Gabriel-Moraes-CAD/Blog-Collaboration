@@ -6,6 +6,9 @@ const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 const QUERY = gql`
   query Post($slug: String!) {
     post(where: { slug: $slug }) {
+      id
+      title
+      datePublished
       coverPhoto {
         url
       }
@@ -54,10 +57,19 @@ export async function getStaticProps({ params }) {
 export default function BlogPost({ post }) {
   return (
     <div>
-      <h1> {post?.title}</h1>
-      <h2>{post?.datePublished}</h2>
-      <h2>{post?.author?.name}</h2>
+      <h1> Post title: {post?.title}</h1>
+      <h2> Published dATE: {post?.datePublished}</h2>
+      <h2>Author: {post?.author?.name}</h2>
       <img src={post?.coverPhoto?.url} />
+      <p
+        className={`${post?.category === "Trails" ? "Trails" : ""} 
+        ${post?.category === "Outdoors" ? "Outdoors" : ""}
+        ${post?.category === "Recipes" ? "Recipes" : ""}
+        ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
+        ${post?.category === "Winter" ? "Winter" : ""}`}
+      >
+        {post?.category}
+      </p>
       <img src={post?.author?.avatar?.url} />
       <div dangerouslySetInnerHTML={{ __html: post?.content.html }}></div>
     </div>
