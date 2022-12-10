@@ -104,6 +104,7 @@ export default function BlogPost({ post, posts }) {
         <img src={post?.author?.avatar?.url} />
         <div dangerouslySetInnerHTML={{ __html: post?.content.html }}></div>
       </div>
+      <h2 className="component-title">LifeStyle</h2>
       <div className="lifestyle-top">
         {posts?.slice(0, 3).map((content) => (
           <LifeStyle
