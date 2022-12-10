@@ -178,6 +178,7 @@ li{
   padding-bottom: 40px;
   border-bottom: 1px solid #ffff;
   justify-items: center;
+  
 }
 
 .trending-top-post {
@@ -252,4 +253,51 @@ li{
 
 .Winter {
   color: #FF63BD;
+}
+
+    /* ###############################
+    ########## AllPosts.js ########
+    ############################## */
+
+.navbar-all-posts {
+  display: flex;
+  padding: 0px;
+  color: white;
+  
+
+}
+
+.navbar-btn-all-posts {
+  margin: auto;
+  margin-top: 120px;
+  display: flex;
+  padding: 0px 100px;
+  background-color: #44475A;
+  font-size: x-large;
+}
+
+.li-category{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+ul {
+  list-style-type: none;
+
+}
+
+li {
+  padding: 14px 10px;
+}
+
+.lifestyle-top-title {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 1200px;
+  margin: 0px auto;
+  padding-top: 10px;
+  color: #ffff;
+  padding-bottom: 10px;
+  justify-items: center;
 }
