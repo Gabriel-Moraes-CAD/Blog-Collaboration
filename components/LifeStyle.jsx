@@ -12,7 +12,7 @@ const LifeStyle = ({
   slug,
 }) => {
   return (
-    <div className="lifestyle-top-post ">
+    <div className="lifestyle-top-post">
       <Link href={"/posts/" + slug}>
         <img className="img-lifestyle" src={coverPhoto?.url} />
         <div className="post-text">

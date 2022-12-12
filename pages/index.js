@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Latest, Trending, PostWidget, LifeStyle } from "../components";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogTest from "../components/BlogTest";
+import Imagecarousel from "../components/Imagecarousel";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 
@@ -31,6 +32,21 @@ const QUERY = gql`
     }
   }
 `;
+
+let box = typeof document !== 'undefined' && document.querySelector('.product-container');
+console.log(box);
+
+const btnpresspre = () => {
+  let width = box.clientWidth;
+  box.scrollLeft = box.scrollLeft - width;
+  console.log(width)
+}
+
+const btnpressnext = () => {
+  let width = box.clientWidth;
+  box.scrollLeft = box.scrollLeft + width;
+  console.log(width)
+}
 
 export async function getStaticProps() {
   const { posts } = await graphcms.request(QUERY);
@@ -105,24 +121,27 @@ export default function Home({ posts }) {
         </div>
       </div>
 
-      <div>
+      <div className="product-carousel">
+        <button className="pre-btn" onClick={btnpresspre}><p>&lt;</p></button>
+        <button className="next-btn"onClick={btnpressnext}><p>&gt;</p></button>
         <h2 className="component-title">LifeStyle</h2>
-        <div className="lifestyle-top">
-          {posts?.slice(0, 3).map((content) => (
-            <LifeStyle
-              title={content.title}
-              datePublished={content.datePublished}
-              author={content.author}
-              coverPhoto={content.coverPhoto}
-              key={content.id}
-              avatar={content.author}
-              content={content.content}
-              category={content.category}
-              text={content.text}
-              slug={content.slug}
-            />
-          ))}
-        </div>
+          <div className="lifestyle-top product-container">
+            {posts?.slice(0, 5).map((content) => (
+              <LifeStyle
+                title={content.title}
+                datePublished={content.datePublished}
+                author={content.author}
+                coverPhoto={content.coverPhoto}
+                key={content.id}
+                avatar={content.author}
+                content={content.content}
+                category={content.category}
+                text={content.text}
+                slug={content.slug}
+              />
+            ))}
+          </div>
+          
       </div>
       {/* <div>
         {posts?.slice(0, 3).map((content) => (
