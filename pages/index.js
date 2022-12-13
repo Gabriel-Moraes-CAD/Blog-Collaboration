@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Latest, Trending, PostWidget, LifeStyle } from "../components";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogTest from "../components/BlogTest";
-import Imagecarousel from "../components/Imagecarousel";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 

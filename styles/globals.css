@@ -60,7 +60,7 @@ li{
   justify-items: center;
 }
 
-.home-top-post{
+.home-top-post {
   grid-column: span 6;
   background-color: #44475A;
   border-radius: 15px;
@@ -101,6 +101,12 @@ li{
   height: auto;
   max-width: 36rem;
   box-shadow: 10px 10px 10px #1a1b22;
+}
+
+@media (max-width: 865px) {
+  .home-top-post {
+    grid-column: span 12;
+  }
 }
 
 /* ###############################
@@ -153,6 +159,12 @@ li{
 
 .texts2 {
   line-height: 20px;
+}
+
+@media (max-width: 865px) {
+  .home-top-widget1 {
+    display: none;
+  }
 }
 
 /* ###############################
@@ -323,7 +335,7 @@ li {
     .next-btn {
       border: none;
       width: 60px;
-      height: 56%;
+      height: 65%;
       position: absolute;
       display: flex;
       justify-content: center;
