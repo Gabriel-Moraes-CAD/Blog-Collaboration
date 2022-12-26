@@ -232,10 +232,17 @@ li{
   background-color: #44475A;
   box-shadow: 10px 10px 10px #1a1b22;
   border-radius: 15px;
-  height: 400px;
-  min-width: 300px;
-  max-width: 300px;
+  height: auto;
+  width: 95%;
   margin-inline-start: 15px;
+}
+
+@media (max-width: 750px) {
+  .lifestyle-top-post {
+    height: 400px;
+    min-width: 300px;
+    max-width: 300px;
+  }
 }
 
 .img-lifestyle {
@@ -320,38 +327,47 @@ li {
     ########## Imagecarousel.js ########
     ############################## */
 
-    .product.carousel {
-      position: relative;
-      overflow: hidden;
+    @media (max-width: 750px) {
+      .product.carousel {
+        position: relative;
+        overflow: hidden;
+      }
+  
+      .product-container {
+        display: flex;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+  
+      .pre-btn,
+      .next-btn {
+        border: none;
+        width: 60px;
+        height: 65%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+      }
+  
+      .next-btn {
+        right: 0;
+      }
+  
+      .next-btn p, .pre-btn p {
+        font-size: 50px;
+        border-radius: 10px;
+        background-color: transparent;
+        box-shadow: 10px 10px 10px #1a1b22;
+        color: white;
+        cursor: pointer;
+      }
     }
 
-    .product-container {
-      display: flex;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    .pre-btn,
-    .next-btn {
-      border: none;
-      width: 60px;
-      height: 65%;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: transparent;
-    }
-
-    .next-btn {
-      right: 0;
-    }
-
-    .next-btn p, .pre-btn p {
-      font-size: 50px;
-      border-radius: 10px;
-      background-color: transparent;
-      box-shadow: 10px 10px 10px #1a1b22;
-      color: white;
-      cursor: pointer;
+    @media (min-width: 750px) {
+      .pre-btn,
+      .next-btn {
+        display: none;
+      }
     }
