@@ -371,3 +371,7 @@ li {
         display: none;
       }
     }
+
+    .test{
+      color: blue;
+    }
