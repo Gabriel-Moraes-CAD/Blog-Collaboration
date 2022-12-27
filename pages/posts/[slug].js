@@ -88,12 +88,9 @@ export default function BlogPost({ post, posts }) {
   return (
     <div>
       <div>
-        <h1> Post title: {post?.title}</h1>
-        <h2> Published dATE: {post?.datePublished}</h2>
-        <h2>Author: {post?.author?.name}</h2>
-        <img src={post?.coverPhoto?.url} />
+        <h1 className="art-title">{post?.title}</h1>
         <p
-          className={`${post?.category === "Trails" ? "Trails" : ""} 
+          className= {`${post?.category === "Trails" ? "Trails" : ""} 
         ${post?.category === "Outdoors" ? "Outdoors" : ""}
         ${post?.category === "Recipes" ? "Recipes" : ""}
         ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
@@ -101,8 +98,16 @@ export default function BlogPost({ post, posts }) {
         >
           {post?.category}
         </p>
-        <img src={post?.author?.avatar?.url} />
-        <div dangerouslySetInnerHTML={{ __html: post?.content.html }}></div>
+        <img className="art-coverphoto" src={post?.coverPhoto?.url} />
+        
+        <div className="art-avatarauthor">
+          <img className="art-avatar" src={post?.author?.avatar?.url} />
+          <div>
+            <h2 className="art-pubdate">{post?.datePublished}</h2>
+            <h2 className="art-author">{post?.author?.name}</h2>
+          </div>
+        </div>
+        <div className="art-text" dangerouslySetInnerHTML={{ __html: post?.content.html }}></div>
       </div>
 
       <h2 className="component-title">LifeStyle</h2>
