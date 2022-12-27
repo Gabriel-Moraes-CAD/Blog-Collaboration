@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GraphQLClient, gql } from "graphql-request";
 import { Latest, Trending, PostWidget, LifeStyle } from "../components";
 
@@ -41,6 +41,12 @@ export async function getStaticProps() {
 }
 
 function AllPosts({ posts }) {
+  // #####################
+  // Search bar use effect
+  // #####################
+  const [queryy, setQueryy] = useState("");
+  const [categoryy, setCategoryy] = useState("");
+
   return (
     <div>
       {/* add ancor links here  */}
@@ -53,12 +59,20 @@ function AllPosts({ posts }) {
           <li className="Winter li-category">Winter</li>
         </ul>
       </div>
-      <div className="lifestyle-top-title">
-        <h2 className="LifeStyle">LifeStyle</h2>
+      <div className="input-box">
+        <input
+          type="text"
+          placeholder="Search... "
+          className="input"
+          onChange={(e) => setQueryy(e.target.value)}
+        />
       </div>
+      {/* <div className="lifestyle-top-title">
+        <h2 className="LifeStyle">Nothing for now</h2>
+      </div> */}
       <div className="lifestyle-top">
         {posts
-          ?.filter((content) => content.category === "LifeStyle")
+          ?.filter((content) => content.title.toLowerCase().includes(queryy))
           .map((content) => (
             <LifeStyle
               title={content.title}
@@ -74,7 +88,7 @@ function AllPosts({ posts }) {
             />
           ))}
       </div>
-      <div className="lifestyle-top-title">
+      {/* <div className="lifestyle-top-title">
         <h2 className="Outdoors">Outdoors</h2>
       </div>
       <div className="lifestyle-top">
@@ -157,7 +171,7 @@ function AllPosts({ posts }) {
               slug={content.slug}
             />
           ))}
-      </div>
+      </div> */}
     </div>
   );
 }

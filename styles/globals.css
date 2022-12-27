@@ -282,24 +282,19 @@ li{
 
 .navbar-all-posts {
   display: flex;
-  padding: 0px;
-  color: white;
-  
-
+  justify-content: center;
 }
 
 .navbar-btn-all-posts {
-  margin: auto;
   margin-top: 120px;
+  padding-left: 0px;
   display: flex;
-  padding: 0px 100px;
-  background-color: #44475A;
   font-size: x-large;
+  
 }
 
 .li-category{
-  margin-left: 10px;
-  margin-right: 10px;
+  padding:15px;
 }
 
 
@@ -312,7 +307,7 @@ li {
   padding: 14px 10px;
 }
 
-.lifestyle-top-title {
+/* .lifestyle-top-title {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   max-width: 1200px;
@@ -321,6 +316,26 @@ li {
   color: #ffff;
   padding-bottom: 10px;
   justify-items: center;
+} */
+
+.input-box{
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+}
+
+.input{
+  width: 35%;
+  height: 40px;
+  background-color: #282A36;
+  border: 2px solid #44475A;
+  border-radius: 10px;
+  color: #ffff;
+  padding: 10px;
+  font-style: italic;
+  font-size: large;
+  outline: none;
+  margin-bottom: 50px;
 }
 
 /* ###############################
