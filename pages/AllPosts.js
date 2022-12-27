@@ -52,11 +52,28 @@ function AllPosts({ posts }) {
       {/* add ancor links here  */}
       <div className="navbar-all-posts">
         <ul className="navbar-btn-all-posts">
-          <li className="LifeStyle li-category">LifeStyle</li>
-          <li className="Outdoors li-category">Outdoors</li>
-          <li className="Recipes li-category">Recipes</li>
-          <li className="Trails li-category">Trails</li>
-          <li className="Winter li-category">Winter</li>
+          <li>
+            <button
+              className="LifeStyle li-category"
+              onClick={() => {
+                setCategoryy("LifeStyle");
+              }}
+            >
+              LifeStyle
+            </button>
+          </li>
+          <li>
+            <button className="Outdoors li-category">Outdoors</button>
+          </li>
+          <li>
+            <button className="Recipes li-category">Recipes</button>
+          </li>
+          <li>
+            <button className="Trails li-category">Trails</button>
+          </li>
+          <li>
+            <button className="Winter li-category">Winter</button>
+          </li>
         </ul>
       </div>
       <div className="input-box">
@@ -73,6 +90,7 @@ function AllPosts({ posts }) {
       <div className="lifestyle-top">
         {posts
           ?.filter((content) => content.title.toLowerCase().includes(queryy))
+          //   .filter((content) => content.category === "LifeStyle")
           .map((content) => (
             <LifeStyle
               title={content.title}
