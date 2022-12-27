@@ -294,9 +294,18 @@ li{
 }
 
 .li-category{
-  padding:15px;
+  background-color:#282A36;
+  font-size:x-large;
+  border: none;
+  font-family: 'Merriweather', serif;
+  cursor: pointer;
+  transition: transform .2s;
+      /* Animation */
 }
 
+.li-category:hover{
+  transform: scale(1.1);
+}
 
 ul {
   list-style-type: none;
