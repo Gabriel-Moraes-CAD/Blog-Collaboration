@@ -24,6 +24,29 @@ const QUERY = gql`
           url
         }
       }
+      content2 {
+        text
+      }
+      content3 {
+        html
+        text
+      }
+      content3Mobile {
+        text
+        html
+      }
+      content4 {
+        text
+      }
+      contentPicture {
+        url
+      }
+      contentPicture2 {
+        url
+      }
+      contentPicture3 {
+        url
+      }
     }
   }
 `;
@@ -89,26 +112,39 @@ export default function BlogPost({ post, posts }) {
     <div>
       <div>
         <h1 className="art-title">{post?.title}</h1>
-        <div className="art-category">
-          <p
-            className= {`${post?.category === "Trails" ? "Trails" : ""} 
-          ${post?.category === "Outdoors" ? "Outdoors" : ""}
-          ${post?.category === "Recipes" ? "Recipes" : ""}
-          ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
-          ${post?.category === "Winter" ? "Winter" : ""}`}
-          >
-            {post?.category}
-          </p>
-        </div>
+        <p
+          className={`${post?.category === "Trails" ? "Trails" : ""} 
+        ${post?.category === "Outdoors" ? "Outdoors" : ""}
+        ${post?.category === "Recipes" ? "Recipes" : ""}
+        ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
+        ${post?.category === "Winter" ? "Winter" : ""}`}
+        >
+          {post?.category}
+        </p>
         <img className="art-coverphoto" src={post?.coverPhoto?.url} />
-        
+
         <div className="art-avatarauthor">
           <img className="art-avatar" src={post?.author?.avatar?.url} />
           <div>
-            <h2 className="art-authordate">by {post?.author?.name} | {post?.datePublished}</h2>
+            <h2 className="art-pubdate">{post?.datePublished}</h2>
+            <h2 className="art-author">{post?.author?.name}</h2>
           </div>
         </div>
-        <div className="art-text" dangerouslySetInnerHTML={{ __html: post?.content.html }}></div>
+
+        <p>{post?.content?.text}</p>
+        <img className="art-coverphoto" src={post?.contentPicture?.url} />
+        <p>{post?.content2?.text}</p>
+        <img className="art-coverphoto" src={post?.contentPicture2?.url} />
+        <div
+          className="art-text"
+          dangerouslySetInnerHTML={{ __html: post?.content3?.html }}
+        ></div>
+        <div
+          className="art-text"
+          dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}
+        ></div>
+        <img className="art-coverphoto" src={post?.contentPicture3?.url} />
+        <p>{post?.content4?.text}</p>
       </div>
 
       <h2 className="component-title">LifeStyle</h2>
