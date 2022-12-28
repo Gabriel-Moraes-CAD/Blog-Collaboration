@@ -353,6 +353,10 @@ li {
   font-size: xx-large;
 }
 
+p{
+  padding-left: 25px;
+}
+
 .art-coverphoto{
   height: auto;
   width: 100%;
@@ -395,8 +399,10 @@ li {
   margin: 0px auto; 
   padding-left: 25px;
   padding-right: 25px;
+  padding-bottom: 40px;
   font-weight: 400;
   font-style: normal;
   line-height: 25px;
   text-align: justify;
+  border-bottom: 1px solid #ffff;
 }
