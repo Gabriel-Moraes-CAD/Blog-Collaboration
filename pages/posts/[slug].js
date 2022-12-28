@@ -110,6 +110,7 @@ export async function getStaticProps({ params }) {
 export default function BlogPost({ post, posts }) {
   return (
     <div>
+      ##################################################################
       <div>
         <h1 className="art-title">{post?.title}</h1>
         <p
@@ -146,7 +147,7 @@ export default function BlogPost({ post, posts }) {
         <img className="art-coverphoto" src={post?.contentPicture3?.url} />
         <p>{post?.content4?.text}</p>
       </div>
-
+      ##################################################################
       <h2 className="component-title">LifeStyle</h2>
       <div className="lifestyle-top">
         {posts?.slice(0, 3).map((content) => (
