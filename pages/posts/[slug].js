@@ -113,39 +113,37 @@ export default function BlogPost({ post, posts }) {
       ##################################################################
       <div>
         <h1 className="art-title">{post?.title}</h1>
-        <p
-          className={`${post?.category === "Trails" ? "Trails" : ""} 
-        ${post?.category === "Outdoors" ? "Outdoors" : ""}
-        ${post?.category === "Recipes" ? "Recipes" : ""}
-        ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
-        ${post?.category === "Winter" ? "Winter" : ""}`}
-        >
-          {post?.category}
-        </p>
+        <div className="art-category">
+          <p
+            className={`${post?.category === "Trails" ? "Trails" : ""} 
+          ${post?.category === "Outdoors" ? "Outdoors" : ""}
+          ${post?.category === "Recipes" ? "Recipes" : ""}
+          ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
+          ${post?.category === "Winter" ? "Winter" : ""}`}
+          >
+            {post?.category}
+          </p>
+        </div>
+       
         <img className="art-coverphoto" src={post?.coverPhoto?.url} />
 
         <div className="art-avatarauthor">
           <img className="art-avatar" src={post?.author?.avatar?.url} />
           <div>
-            <h2 className="art-pubdate">{post?.datePublished}</h2>
-            <h2 className="art-author">{post?.author?.name}</h2>
+            <h2 className="art-authordate">by {post?.author?.name} | {post?.datePublished}</h2>
           </div>
         </div>
 
-        <p>{post?.content?.text}</p>
-        <img className="art-coverphoto" src={post?.contentPicture?.url} />
-        <p>{post?.content2?.text}</p>
-        <img className="art-coverphoto" src={post?.contentPicture2?.url} />
-        <div
-          className="art-text"
-          dangerouslySetInnerHTML={{ __html: post?.content3?.html }}
-        ></div>
-        <div
-          className="art-text"
-          dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}
-        ></div>
-        <img className="art-coverphoto" src={post?.contentPicture3?.url} />
-        <p>{post?.content4?.text}</p>
+        <div className="art-text">
+          <p>{post?.content?.text}</p>
+          <img className="art-photos" src={post?.contentPicture?.url} />
+          <p>{post?.content2?.text}</p>
+          <img className="art-photos" src={post?.contentPicture2?.url} />
+          <div className="iFrame" dangerouslySetInnerHTML={{ __html: post?.content3?.html }}></div>
+          <div className="mobileIframe" dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}></div>
+          <img className="art-photos" src={post?.contentPicture3?.url} />
+          <p>{post?.content4?.text}</p>
+        </div>
       </div>
       ##################################################################
       <h2 className="component-title">LifeStyle</h2>
