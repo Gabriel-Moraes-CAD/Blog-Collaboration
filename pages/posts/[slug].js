@@ -89,22 +89,23 @@ export default function BlogPost({ post, posts }) {
     <div>
       <div>
         <h1 className="art-title">{post?.title}</h1>
-        <p
-          className= {`${post?.category === "Trails" ? "Trails" : ""} 
-        ${post?.category === "Outdoors" ? "Outdoors" : ""}
-        ${post?.category === "Recipes" ? "Recipes" : ""}
-        ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
-        ${post?.category === "Winter" ? "Winter" : ""}`}
-        >
-          {post?.category}
-        </p>
+        <div className="art-category">
+          <p
+            className= {`${post?.category === "Trails" ? "Trails" : ""} 
+          ${post?.category === "Outdoors" ? "Outdoors" : ""}
+          ${post?.category === "Recipes" ? "Recipes" : ""}
+          ${post?.category === "LifeStyle" ? "LifeStyle" : ""}
+          ${post?.category === "Winter" ? "Winter" : ""}`}
+          >
+            {post?.category}
+          </p>
+        </div>
         <img className="art-coverphoto" src={post?.coverPhoto?.url} />
         
         <div className="art-avatarauthor">
           <img className="art-avatar" src={post?.author?.avatar?.url} />
           <div>
-            <h2 className="art-pubdate">{post?.datePublished}</h2>
-            <h2 className="art-author">{post?.author?.name}</h2>
+            <h2 className="art-authordate">by {post?.author?.name} | {post?.datePublished}</h2>
           </div>
         </div>
         <div className="art-text" dangerouslySetInnerHTML={{ __html: post?.content.html }}></div>
