@@ -243,7 +243,7 @@ li{
   box-shadow: 1px 1px 10px #282A36;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 750px) {
     .lifestyle-top{
       display: grid;
       grid-column: span 12;
