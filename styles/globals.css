@@ -224,7 +224,25 @@ li{
   padding-bottom: 40px;
   border-bottom: 1px solid #ffff;
   justify-items: center;
+}
 
+@media (max-width: 375px) {
+  .lifestyle-top{
+    display: grid;
+    grid-column: span 12;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+
+
+  .post-text{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  
 }
 
 .lifestyle-top-post {

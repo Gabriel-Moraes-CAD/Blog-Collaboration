@@ -107,7 +107,7 @@ export default function Home({ posts }) {
 
       <div>
         <h2 className="component-title">LifeStyle</h2>
-          <div className="lifestyle-top product-container">
+          <div className="lifestyle-top">
             {posts?.slice(0, 3).map((content) => (
               <LifeStyle
                 title={content.title}
