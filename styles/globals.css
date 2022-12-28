@@ -353,7 +353,7 @@ li {
   font-size: xx-large;
 }
 
-p{
+.art-category{
   padding-left: 25px;
 }
 
@@ -368,23 +368,16 @@ p{
 .art-avatarauthor{
   display: flex;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .art-avatar{
-  width: 74px;
-  height: 74px;
+  width: 56px;
+  height: 56px;
   margin-left: 25px;
 }
 
-.art-pubdate{
-  color: #ffff;
-  margin: 0px auto; 
-  padding-left: 20px;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.art-author{
+.art-authordate{
   color: #ffff;
   margin: 0px auto; 
   padding-left: 20px;
