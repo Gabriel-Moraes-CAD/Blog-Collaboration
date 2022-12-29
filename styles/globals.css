@@ -233,7 +233,6 @@ li{
   border-radius: 15px;
   height: auto;
   width: 95%;
-  margin-inline-start: 15px;
 }
 
 .img-lifestyle {
@@ -264,7 +263,9 @@ li{
     }
   
     .lifestyle-container{
-      display: flex;
+      display: grid;
+      grid-column: span 2;
+      grid-template-columns: repeat(2, 1fr);
       align-items: center;
       justify-items: center;
       height: auto;
@@ -272,20 +273,31 @@ li{
     }
   
     .lifestyle-imgcont{
+      grid-column: span 1;
       margin: 10px;
       border-radius: 11px;
-      /* overflow: hidden; */
-      height: 98%;
-      width: auto;
+      height: auto;
+      width: 98%;
+      padding-left: 10px;
     }
-  
-    /* .img-lifestyle{
-      height: 100%;
-      width: auto;
-    } */
-  
-    
+
+     @media (max-width: 550px) {
+      .img-lifestyle{
+        height: auto;
+        width: 98%;
+        text-align: center;
+      }
+
+    }
+
+    @media (max-width: 549px){
+      .short-desc{
+        display: none;
+      }  
+    }
   }
+
+  
   
     /* ###############################
   ########## CATEGORIES CSS ########
@@ -472,3 +484,12 @@ li {
   }
 }
 
+@media (max-width: 549px){
+  .art-authordate{
+    font-size: large;
+  }
+
+  .art-text{
+    font-size: small;
+  }
+}
