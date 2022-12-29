@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Latest, Trending, PostWidget, LifeStyle } from "../components";
+import { Latest, Trending, PostWidget, LifeStyle} from "../components";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogTest from "../components/BlogTest";
 
