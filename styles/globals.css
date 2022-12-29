@@ -58,8 +58,8 @@ li{
   padding-bottom: 40px;
   border-bottom: 1px solid #ffff;
   justify-items: center;
+  
 }
-
 .home-top-post {
   grid-column: span 6;
   background-color: #44475A;
@@ -67,7 +67,12 @@ li{
   height: auto;
   width: 95%;
   box-shadow: 10px 10px 10px #1a1b22;
+  transition: transform .2s;
 }
+
+ .home-top-post:hover {
+   transform: scale(1.1);
+ }
 
 .img-top{
   height: auto;
@@ -133,8 +138,13 @@ li{
   height: auto;
   width: 95%;
   margin-bottom: 15px;
+  transition: transform .2s ;
 }
 
+ .home-top-widget2:hover {
+   transform: scale(1.1);
+ }
+ 
 .post-text-container { 
   display: flex;
   align-items: center;
@@ -142,6 +152,7 @@ li{
   white-space: nowrap;
   height: auto;
   width: 95%;
+  
 }
 
 .img1 {
@@ -199,8 +210,13 @@ li{
   box-shadow: 10px 10px 10px #1a1b22;
   border-radius: 15px;
   height: auto;
-  width: 95%;
+  width: 95%; 
+  transition: transform .2s;
 }
+
+.trending-top-post:hover {
+   transform: scale(1.1);
+ }
 
 .img-trending {
   height: auto;
@@ -233,7 +249,12 @@ li{
   border-radius: 15px;
   height: auto;
   width: 95%;
+  transition: transform .2s;
 }
+ 
+.lifestyle-top-post:hover {
+   transform: scale(1.1);
+ }
 
 .img-lifestyle {
   height: auto;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GraphQLClient, gql } from "graphql-request";
-import { Latest, Trending, PostWidget, LifeStyle } from "../components";
+import { LifeStyle } from "../components";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 
@@ -45,7 +45,6 @@ function AllPosts({ posts }) {
   // Search bar use effect
   // #####################
   const [queryy, setQueryy] = useState("");
-  const [categoryy, setCategoryy] = useState("");
 
   return (
     <div>
@@ -88,9 +87,11 @@ function AllPosts({ posts }) {
         <h2 className="LifeStyle">Nothing for now</h2>
       </div> */}
       <div className="lifestyle-top">
+        {/* later I'd like to add a select by category function here!
+        I tried building it with UseEffect and Filter, but had too much trouble! */}
+
         {posts
           ?.filter((content) => content.title.toLowerCase().includes(queryy))
-          //   .filter((content) => content.category === "LifeStyle")
           .map((content) => (
             <LifeStyle
               title={content.title}
@@ -106,90 +107,6 @@ function AllPosts({ posts }) {
             />
           ))}
       </div>
-      {/* <div className="lifestyle-top-title">
-        <h2 className="Outdoors">Outdoors</h2>
-      </div>
-      <div className="lifestyle-top">
-        {posts
-          ?.filter((content) => content.category === "Outdoors")
-          .map((content) => (
-            <LifeStyle
-              title={content.title}
-              datePublished={content.datePublished}
-              author={content.author}
-              coverPhoto={content.coverPhoto}
-              key={content.id}
-              avatar={content.author}
-              content={content.content}
-              category={content.category}
-              text={content.text}
-              slug={content.slug}
-            />
-          ))}
-      </div>
-      <div className="lifestyle-top-title">
-        <h2 className="Recipes">Recipes</h2>
-      </div>
-      <div className="lifestyle-top">
-        {posts
-          ?.filter((content) => content.category === "Recipes")
-          .map((content) => (
-            <LifeStyle
-              title={content.title}
-              datePublished={content.datePublished}
-              author={content.author}
-              coverPhoto={content.coverPhoto}
-              key={content.id}
-              avatar={content.author}
-              content={content.content}
-              category={content.category}
-              text={content.text}
-              slug={content.slug}
-            />
-          ))}
-      </div>
-      <div className="lifestyle-top-title">
-        <h2 className="Trails">Trails</h2>
-      </div>
-      <div className="lifestyle-top">
-        {posts
-          ?.filter((content) => content.category === "Trails")
-          .map((content) => (
-            <LifeStyle
-              title={content.title}
-              datePublished={content.datePublished}
-              author={content.author}
-              coverPhoto={content.coverPhoto}
-              key={content.id}
-              avatar={content.author}
-              content={content.content}
-              category={content.category}
-              text={content.text}
-              slug={content.slug}
-            />
-          ))}
-      </div>
-      <div className="lifestyle-top-title">
-        <h2 className="Winter">Winter</h2>
-      </div>
-      <div className="lifestyle-top">
-        {posts
-          ?.filter((content) => content.category === "Winter")
-          .map((content) => (
-            <LifeStyle
-              title={content.title}
-              datePublished={content.datePublished}
-              author={content.author}
-              coverPhoto={content.coverPhoto}
-              key={content.id}
-              avatar={content.author}
-              content={content.content}
-              category={content.category}
-              text={content.text}
-              slug={content.slug}
-            />
-          ))}
-      </div> */}
     </div>
   );
 }
