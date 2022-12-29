@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GraphQLClient, gql } from "graphql-request";
-import { LifeStyle } from "../components";
+import { LifeStyle, Footer } from "../components";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 
@@ -107,6 +107,7 @@ function AllPosts({ posts }) {
             />
           ))}
       </div>
+      <Footer />
     </div>
   );
 }

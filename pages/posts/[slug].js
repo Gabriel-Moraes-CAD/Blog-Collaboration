@@ -1,6 +1,6 @@
 // import { Latest, Trending, PostWidget, LifeStyle } from "../components";
 import { GraphQLClient, gql } from "graphql-request";
-import { Latest, Trending, PostWidget, LifeStyle } from "../../components";
+import { LifeStyle } from "../../components";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 
@@ -123,13 +123,15 @@ export default function BlogPost({ post, posts }) {
             {post?.category}
           </p>
         </div>
-       
+
         <img className="art-coverphoto" src={post?.coverPhoto?.url} />
 
         <div className="art-avatarauthor">
           <img className="art-avatar" src={post?.author?.avatar?.url} />
           <div>
-            <h2 className="art-authordate">by {post?.author?.name} | {post?.datePublished}</h2>
+            <h2 className="art-authordate">
+              by {post?.author?.name} | {post?.datePublished}
+            </h2>
           </div>
         </div>
 
@@ -138,8 +140,14 @@ export default function BlogPost({ post, posts }) {
           <img className="art-photos" src={post?.contentPicture?.url} />
           <p>{post?.content2?.text}</p>
           <img className="art-photos" src={post?.contentPicture2?.url} />
-          <div className="iFrame" dangerouslySetInnerHTML={{ __html: post?.content3?.html }}></div>
-          <div className="mobileIframe" dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}></div>
+          <div
+            className="iFrame"
+            dangerouslySetInnerHTML={{ __html: post?.content3?.html }}
+          ></div>
+          <div
+            className="mobileIframe"
+            dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}
+          ></div>
           <img className="art-photos" src={post?.contentPicture3?.url} />
           <p>{post?.content4?.text}</p>
         </div>

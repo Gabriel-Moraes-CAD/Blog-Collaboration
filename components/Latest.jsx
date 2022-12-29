@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import PostWidget from "./PostWidget";
 
 const Latest = ({
   title,

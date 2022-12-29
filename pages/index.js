@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Latest, Trending, PostWidget, LifeStyle, Footer } from "../components";
 import { GraphQLClient, gql } from "graphql-request";
-import BlogTest from "../components/BlogTest";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 
@@ -107,37 +106,23 @@ export default function Home({ posts }) {
 
       <div>
         <h2 className="component-title">LifeStyle</h2>
-          <div className="lifestyle-top">
-            {posts?.slice(0, 3).map((content) => (
-              <LifeStyle
-                title={content.title}
-                datePublished={content.datePublished}
-                author={content.author}
-                coverPhoto={content.coverPhoto}
-                key={content.id}
-                avatar={content.author}
-                content={content.content}
-                category={content.category}
-                text={content.text}
-                slug={content.slug}
-              />
-            ))}
-          </div>
+        <div className="lifestyle-top">
+          {posts?.slice(0, 3).map((content) => (
+            <LifeStyle
+              title={content.title}
+              datePublished={content.datePublished}
+              author={content.author}
+              coverPhoto={content.coverPhoto}
+              key={content.id}
+              avatar={content.author}
+              content={content.content}
+              category={content.category}
+              text={content.text}
+              slug={content.slug}
+            />
+          ))}
+        </div>
       </div>
-      {/* <div>
-        {posts?.slice(0, 3).map((content) => (
-          <BlogTest
-            title={content.title}
-            datePublished={content.datePublished}
-            author={content.author}
-            coverPhoto={content.coverPhoto}
-            key={content.id}
-            avatar={content.author}
-            content={content.content}
-            category={content.category}
-          />
-        ))}
-      </div> */}
       <Footer />
     </div>
   );
