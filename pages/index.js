@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Latest, Trending, PostWidget, LifeStyle} from "../components";
+import { Latest, Trending, PostWidget, LifeStyle, Footer } from "../components";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogTest from "../components/BlogTest";
 
@@ -138,6 +138,7 @@ export default function Home({ posts }) {
           />
         ))}
       </div> */}
+      <Footer />
     </div>
   );
 }
