@@ -4,3 +4,4 @@ export { default as PostWidget } from "./PostWidget";
 export { default as NavBar } from "./NavBar";
 export { default as Layout } from "./Layout";
 export { default as LifeStyle } from "./LifeStyle";
+export { default as Footer } from "./Footer";

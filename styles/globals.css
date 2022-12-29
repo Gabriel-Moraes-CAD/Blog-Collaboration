@@ -493,3 +493,18 @@ li {
     font-size: small;
   }
 }
+
+/* ###############################
+########## Footer.jsx ########
+############################## */
+
+.footer2{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 25px 40px 25px 40px;
+  color: #ffff;
+}
+
+.policy{
+  text-align: right;
+}
