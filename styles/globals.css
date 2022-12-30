@@ -223,7 +223,7 @@ li{
 .component-title{
   color: #ffff;
   margin: 0px auto; 
-  padding: 50px;
+  padding: 30px 0px 20px ;
   padding-left: 120px; 
   font-weight: 900;
   font-style: normal;
@@ -280,6 +280,7 @@ li{
   border-bottom: 1px solid #ffff;
   justify-items: center;
 }
+
 
 .lifestyle-top-post {
   grid-column: span 4;
