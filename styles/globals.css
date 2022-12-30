@@ -37,6 +37,23 @@ a {
   background: #AE75FF;
 }
 
+#GraphQl-link {
+  color: #ffff;
+  text-decoration: underline;
+  font-size: larger;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Lora', serif;
+}
+
+#GraphQl-link:hover {
+  background-color: rgba(255, 255, 255, 0.569);
+  color: #282A36;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 /* ###############################
 ########## Latest.tsx CSS ########
 ############################## */
@@ -348,23 +365,44 @@ li{
 
 .Trails{
   color: #5EE3FF;
+  font-family: 'Lora', serif;
+    font-size: x-large;
+    letter-spacing: .5px;
+    text-shadow: 2px 2px .5px #1a1b22;
 }
 
 .Outdoors{
   color: #AE75FF;
+  font-family: 'Lora', serif;
+    font-size: x-large;
+    letter-spacing: .5px;
+    text-shadow: 2px 2px .5px #1a1b22;
 }
 
 .Recipes{
   color: #54E879;
+  font-family: 'Lora', serif;
+    font-size: x-large;
+    letter-spacing: .5px;
+    text-shadow: 2px 2px .5px #1a1b22;
 }
 
 .LifeStyle {
-  color: #FFAB52;
+color: #FFAB52;
+font-family: 'Lora', serif;
+  font-size: x-large;
+  letter-spacing: .5px;
+  text-shadow: 2px 2px .5px #1a1b22;
 }
 
 .Winter {
   color: #FF63BD;
-}
+  font-family: 'Lora', serif;
+  font-size: x-large;
+  letter-spacing: .5px;
+  text-shadow: 2px 2px .5px #1a1b22;
+  }
+
 
     /* ###############################
     ########## AllPosts.js ########
@@ -458,9 +496,18 @@ li {
 .art-coverphoto{
   height: auto;
   width: 100%;
-  padding: 25px;
+  padding: 25px 25px 0px;
   border-radius: 50px;
   box-shadow: 1px 1px 10px #282A36;
+}
+
+.photo-credit{
+  color: #ffff;
+  font-family:'Lora', serif ;
+  font-weight: 400;
+  font-style: italic;
+  padding: 0px 50px 30px;
+  text-align: end;
 }
 
 .art-avatarauthor{
@@ -502,7 +549,7 @@ li {
 .art-photos{
   height: auto;
   width: 100%;
-  padding: 56px;
+  padding: 56px 50px 0px;  
   border-radius: 75px;
   box-shadow: 1px 1px 10px #282A36;
 }
@@ -542,12 +589,32 @@ li {
 ############################## */
 
 .footer2{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 25px 40px 25px 40px;
+  display: flex;
   color: #ffff;
+  justify-content: space-around;
+  padding: 20px 0px 10px;
+  /* grid-template-columns: repeat(3, 1fr);
+  padding: 25px 40px 25px 40px;
+  color: #ffff; */
 }
 
-.policy{
+/* .policy{
   text-align: right;
+} */
+
+.footer-ul{
+  display: flex;
 }
+
+@media (max-width: 750px) {
+  .footer-ul{
+    display: block;
+    text-align: center;
+  }
+
+  .footer2 {
+    justify-content: center;
+  }
+}
+
+

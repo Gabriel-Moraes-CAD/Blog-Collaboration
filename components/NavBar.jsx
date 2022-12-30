@@ -6,14 +6,14 @@ const NavBar = () => {
     <div className="navbar">
       <img className="img-navbar" src="/favicon.ico" />
       <ul className="navbar-btn">
-        <Link href={"#"}>
+        <Link href={"/"}>
+          <li>Home</li>
+        </Link>
+        <Link href={"/AllPosts"}>
           <li>Search</li>
         </Link>
-        <Link href={"/AllPosts"}>
-          <li>All posts</li>
-        </Link>
-        <Link href={"/AllPosts"}>
-          <li>Categories</li>
+        <Link href={"#"}>
+          <li>Buy me a Coffee</li>
         </Link>
       </ul>
     </div>

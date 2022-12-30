@@ -1,6 +1,7 @@
 // import { Latest, Trending, PostWidget, LifeStyle } from "../components";
 import { GraphQLClient, gql } from "graphql-request";
-import { LifeStyle } from "../../components";
+import { LifeStyle, Footer } from "../../components";
+import Head from "next/head";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_LINK);
 
@@ -14,8 +15,8 @@ const QUERY = gql`
         url
       }
       category
+      keyWords
       content {
-        html
         text
       }
       author {
@@ -24,12 +25,18 @@ const QUERY = gql`
           url
         }
       }
+      linkOne {
+        html
+      }
+      linkTwo {
+        html
+      }
       content2 {
         text
       }
       content3 {
-        html
         text
+        html
       }
       content3Mobile {
         text
@@ -47,6 +54,10 @@ const QUERY = gql`
       contentPicture3 {
         url
       }
+      photoCredit
+      photoCredit1
+      photoCredit2
+      photoCredit3
     }
   }
 `;
@@ -110,6 +121,22 @@ export async function getStaticProps({ params }) {
 export default function BlogPost({ post, posts }) {
   return (
     <div>
+      <Head>
+        <title>{post?.title}</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content={post?.keyWords} />
+        <meta name="author" content={post?.author} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={post?.title} />
+        <meta
+          property="og:description"
+          content={post?.content?.text.slice(0, 300)}
+        />
+        <meta property="og:image" content={post?.coverPhoto?.url} />
+      </Head>
+
       <div>
         <h1 className="art-title">{post?.title}</h1>
         <div className="art-category">
@@ -125,6 +152,7 @@ export default function BlogPost({ post, posts }) {
         </div>
 
         <img className="art-coverphoto" src={post?.coverPhoto?.url} />
+        <p className="photo-credit">{post?.photoCredit}</p>
 
         <div className="art-avatarauthor">
           <img className="art-avatar" src={post?.author?.avatar?.url} />
@@ -137,9 +165,19 @@ export default function BlogPost({ post, posts }) {
 
         <div className="art-text">
           <p>{post?.content?.text}</p>
+          <div
+            className=""
+            dangerouslySetInnerHTML={{ __html: post?.linkOne?.html }}
+          ></div>
           <img className="art-photos" src={post?.contentPicture?.url} />
+          <p className="photo-credit">{post?.photoCredit1}</p>
           <p>{post?.content2?.text}</p>
+          <div
+            className=""
+            dangerouslySetInnerHTML={{ __html: post?.linkTwo?.html }}
+          ></div>
           <img className="art-photos" src={post?.contentPicture2?.url} />
+          <p className="photo-credit">{post?.photoCredit2}</p>
           <div
             className="iFrame"
             dangerouslySetInnerHTML={{ __html: post?.content3?.html }}
@@ -149,6 +187,7 @@ export default function BlogPost({ post, posts }) {
             dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}
           ></div>
           <img className="art-photos" src={post?.contentPicture3?.url} />
+          <p className="photo-credit">{post?.photoCredit3}</p>
           <p>{post?.content4?.text}</p>
         </div>
       </div>
@@ -170,6 +209,7 @@ export default function BlogPost({ post, posts }) {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

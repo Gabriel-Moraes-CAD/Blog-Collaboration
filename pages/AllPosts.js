@@ -52,14 +52,7 @@ function AllPosts({ posts }) {
       <div className="navbar-all-posts">
         <ul className="navbar-btn-all-posts">
           <li>
-            <button
-              className="LifeStyle li-category"
-              onClick={() => {
-                setCategoryy("LifeStyle");
-              }}
-            >
-              LifeStyle
-            </button>
+            <button className="LifeStyle li-category">LifeStyle</button>
           </li>
           <li>
             <button className="Outdoors li-category">Outdoors</button>

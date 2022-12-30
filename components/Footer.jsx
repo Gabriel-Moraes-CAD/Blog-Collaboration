@@ -1,14 +1,20 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
 function Footer() {
   return (
     <div className="footer2">
-        <div>Contact us</div>
+      <ul className="footer-ul">
+        <li>Contact Us</li>
+        <li>&copy; All Rights Reserved Blog Name</li>
+        <li>Privacy Policy</li>
+      </ul>
+
+      {/* <div>Contact us</div>
         <div>&copy; All Rights Reserved Blog Name</div>
-        <div className="policy">Privacy Policy</div>
+        <div className="policy">Privacy Policy</div> */}
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
