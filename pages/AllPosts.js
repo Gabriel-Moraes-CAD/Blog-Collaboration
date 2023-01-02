@@ -76,9 +76,7 @@ function AllPosts({ posts }) {
           onChange={(e) => setQueryy(e.target.value)}
         />
       </div>
-      {/* <div className="lifestyle-top-title">
-        <h2 className="LifeStyle">Nothing for now</h2>
-      </div> */}
+
       <div className="lifestyle-top">
         {/* later I'd like to add a select by category function here!
         I tried building it with UseEffect and Filter, but had too much trouble! */}

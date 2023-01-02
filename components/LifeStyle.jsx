@@ -32,7 +32,6 @@ const LifeStyle = ({
             <p className="short-desc">{content?.text.substring(0, 75)}</p>
           </div>
         </div>
-        
       </Link>
     </div>
   );
