@@ -85,6 +85,24 @@ a {
   text-shadow: 3px 3px 2px #1a1b22;
 }
 
+.logo-then{
+    background-color:#ffff;
+    /* Create the gradient. */ 
+    background-image: linear-gradient(16deg, rgba(94, 227, 255, 1) 25%, rgba(174, 117, 255, 1) 75%);
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-family:'Lora',serif ;
+    font-size: xx-large;
+    text-shadow: none;
+}
+
 ul {
   list-style-type: none;
   

@@ -5,7 +5,9 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <Link href={"/"}>
-        <p className="img-navbar">Better THEN Blog</p>
+        <p className="img-navbar">
+          Better<span className="logo-then">THEN</span>Blog
+        </p>
       </Link>
       <ul className="navbar-btn">
         <Link href={"/"}>
