@@ -18,21 +18,13 @@ const QUERY = gql`
       keyWords
       content {
         text
+        html
       }
       author {
         name
         avatar {
           url
         }
-      }
-      linkOne {
-        html
-      }
-      linkTwo {
-        html
-      }
-      content2 {
-        text
       }
       content3 {
         text
@@ -42,22 +34,7 @@ const QUERY = gql`
         text
         html
       }
-      content4 {
-        text
-      }
-      contentPicture {
-        url
-      }
-      contentPicture2 {
-        url
-      }
-      contentPicture3 {
-        url
-      }
       photoCredit
-      photoCredit1
-      photoCredit2
-      photoCredit3
     }
   }
 `;
@@ -165,33 +142,18 @@ export default function BlogPost({ post, posts }) {
           </div>
         </div>
 
-        <div className="art-text">
-          <p>{post?.content?.text}</p>
-          <div
-            className=""
-            dangerouslySetInnerHTML={{ __html: post?.linkOne?.html }}
-          ></div>
-          <img className="art-photos" src={post?.contentPicture?.url} />
-          <p className="photo-credit">{post?.photoCredit1}</p>
-          <p>{post?.content2?.text}</p>
-          <div
-            className=""
-            dangerouslySetInnerHTML={{ __html: post?.linkTwo?.html }}
-          ></div>
-          <img className="art-photos" src={post?.contentPicture2?.url} />
-          <p className="photo-credit">{post?.photoCredit2}</p>
-          <div
-            className="iFrame"
-            dangerouslySetInnerHTML={{ __html: post?.content3?.html }}
-          ></div>
-          <div
-            className="mobileIframe"
-            dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}
-          ></div>
-          <img className="art-photos" src={post?.contentPicture3?.url} />
-          <p className="photo-credit">{post?.photoCredit3}</p>
-          <p>{post?.content4?.text}</p>
-        </div>
+        <div
+          className="art-text"
+          dangerouslySetInnerHTML={{ __html: post?.content?.html }}
+        ></div>
+        <div
+          className="iFrame"
+          dangerouslySetInnerHTML={{ __html: post?.content3?.html }}
+        ></div>
+        <div
+          className="mobileIframe"
+          dangerouslySetInnerHTML={{ __html: post?.content3Mobile?.html }}
+        ></div>
       </div>
 
       <h2 className="component-title">LifeStyle</h2>
