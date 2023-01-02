@@ -72,10 +72,17 @@ a {
   
 }
 .img-navbar{
-  width: 50px;
+ 
+  width: auto;
   height: 50px;
-  margin-top: 14px;
+  padding: 0px 20px;
+  margin-top: 20px;
   margin-left: 10px;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: x-large;
+  letter-spacing: .5px;
+  text-shadow: 3px 3px 2px #1a1b22;
 }
 
 ul {
@@ -594,14 +601,7 @@ li {
   color: #ffff;
   justify-content: space-around;
   padding: 20px 0px 10px;
-  /* grid-template-columns: repeat(3, 1fr);
-  padding: 25px 40px 25px 40px;
-  color: #ffff; */
 }
-
-/* .policy{
-  text-align: right;
-} */
 
 .footer-ul{
   display: flex;

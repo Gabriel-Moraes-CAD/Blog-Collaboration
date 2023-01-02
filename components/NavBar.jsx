@@ -4,7 +4,9 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <div className="navbar">
-      <img className="img-navbar" src="/favicon.ico" />
+      <Link href={"/"}>
+        <p className="img-navbar">Better THEN Blog</p>
+      </Link>
       <ul className="navbar-btn">
         <Link href={"/"}>
           <li>Home</li>

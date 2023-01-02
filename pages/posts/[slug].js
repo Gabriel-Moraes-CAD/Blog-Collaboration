@@ -138,7 +138,9 @@ export default function BlogPost({ post, posts }) {
       </Head>
 
       <div>
-        <h1 className="art-title">{post?.title}</h1>
+        <h1 className="art-title" key={post?.id}>
+          {post?.title}
+        </h1>
         <div className="art-category">
           <p
             className={`${post?.category === "Trails" ? "Trails" : ""} 
