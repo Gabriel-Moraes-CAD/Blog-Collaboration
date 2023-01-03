@@ -85,6 +85,12 @@ a {
   text-shadow: 3px 3px 2px #1a1b22;
 }
 
+@media (max-width: 750px){
+  .buy-me-a-coffee{
+    display: none;
+  }
+}
+
 .logo-then{
     background-color:#ffff;
     /* Create the gradient. */ 
@@ -263,7 +269,6 @@ li{
   padding-top: 10px;
   color: #ffff;
   padding-bottom: 40px;
-  border-bottom: 1px solid #ffff;
   justify-items: center;
   
 }
@@ -305,6 +310,7 @@ li{
   border-bottom: 1px solid #ffff;
   justify-items: center;
 }
+
 
 
 .lifestyle-top-post {
@@ -558,6 +564,10 @@ li {
   font-style: italic;
 }
 
+.slug{
+  border-bottom: 1px solid #ffff;
+}
+
 .art-text{
   color: #ffff;
   margin: 0px auto; 
@@ -568,7 +578,6 @@ li {
   font-style: normal;
   line-height: 25px;
   text-align: justify;
-  border-bottom: 1px solid #ffff;
   overflow: hidden;
 }
 

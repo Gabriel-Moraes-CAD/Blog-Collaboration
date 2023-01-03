@@ -114,7 +114,7 @@ export default function BlogPost({ post, posts }) {
         <meta property="og:image" content={post?.coverPhoto?.url} />
       </Head>
 
-      <div>
+      <div className="slug">
         <h1 className="art-title" key={post?.id}>
           {post?.title}
         </h1>
@@ -156,7 +156,7 @@ export default function BlogPost({ post, posts }) {
         ></div>
       </div>
 
-      <h2 className="component-title">LifeStyle</h2>
+      <h2 className="component-title">Trending</h2>
       <div className="lifestyle-top">
         {posts?.slice(0, 3).map((content) => (
           <LifeStyle

@@ -17,7 +17,7 @@ const NavBar = () => {
           <li>Search</li>
         </Link>
         <Link href={"#"}>
-          <li>Buy me a Coffee</li>
+          <li className="buy-me-a-coffee">Buy me a Coffee</li>
         </Link>
       </ul>
     </div>

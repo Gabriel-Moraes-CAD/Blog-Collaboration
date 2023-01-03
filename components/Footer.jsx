@@ -8,6 +8,7 @@ function Footer() {
         <li>Contact Us</li>
         <li>&copy; All Rights Reserved Blog Name</li>
         <li>Privacy Policy</li>
+        <li>Buy me a Coffee</li>
       </ul>
 
       {/* <div>Contact us</div>
