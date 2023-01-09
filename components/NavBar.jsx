@@ -16,9 +16,9 @@ const NavBar = () => {
         <Link href={"/AllPosts"}>
           <li>Search</li>
         </Link>
-        <Link href={"#"}>
+        {/* <Link href={"#"}>
           <li className="buy-me-a-coffee">Buy me a Coffee</li>
-        </Link>
+        </Link> */}
       </ul>
     </div>
   );
