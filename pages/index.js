@@ -44,7 +44,7 @@ export default function Home({ posts }) {
   return (
     <div className="">
       <Head>
-        <title>BLOG NAME</title>
+        <title>Better THEN Blog</title>
         <meta property="og:type" content="website" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -53,8 +53,8 @@ export default function Home({ posts }) {
         <meta property="og:image" content="add link thumbnail here" />
         <meta name="description" content="write nice description here!" />
         <link rel="icon" href="/favicon.ico" />
-        ##################### ####Facebook######## #####################
-        <meta property="og:title" content="BLOG NAME" />
+        {/* ##################### ####Facebook######## ##################### */}
+        <meta property="og:title" content="Better THEN Blog" />
         <meta
           property="og:description"
           content="BRIEF DESCRIPTION OF THE BLOG"
