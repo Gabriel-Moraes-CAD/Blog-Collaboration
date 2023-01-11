@@ -69,6 +69,7 @@ a {
   margin-left: auto;
   display: flex;
   padding: 0px 20px;
+  font-size: large;
   
 }
 .img-navbar{
@@ -86,8 +87,11 @@ a {
 }
 
 @media (max-width: 750px){
-  .buy-me-a-coffee{
-    display: none;
+  .img-navbar{
+    font-size:medium;
+  }
+  .navbar-btn{
+    font-size: medium;
   }
 }
 
@@ -642,6 +646,7 @@ li {
 
   .footer2 {
     justify-content: center;
+    margin: 0px;
   }
 }
 
